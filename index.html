@@ -3,5 +3,16 @@
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
+    
+    
+<script>
+    var inventorylink = "http://alrevisacademy.jcink.net/index.php?act=store&code=view_inventory&memberid=2";
+    $.get(inventorylink , function( data ) {
+    var synth_in_inventory = [];
+    $(".shopitem",data).each(function(){ 
+        console.log($(this).find(".shopitem_image").text()); 
+    });
+   }); 
+</script>
 </body>
 </html>
