@@ -114,8 +114,12 @@
                 $(this).select();
             }); 
             
-            $( ".masukan" ).change(function() {
+            $( "select.masukan" ).change(function() {
               countDice();
+            });
+            
+            $("input.masukan").on('input', function() {
+                countDice();
             });
         </script>
     </body>
