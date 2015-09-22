@@ -3,23 +3,25 @@
     <body>
         <h1>Dice Roll & Status Counter</h1>
         <br><font style="size:120%;font-weight:bold">Status Input</font><br><br>
-        <b>ATK: </b> <input id="charastat-ATK"><br>
-        <b>DEF: </b> <input id="charastat-DEF"><br>
-        <b>HP: </b> <input id="charastat-HP"><br>
-        <b>SP: </b> <input id="charastat-SP"><br>
+        <table><tr><td><b>ATK: </b></td><td><input id="charastat-ATK"></td>
+        <td><b>HP: </b></td><td><input id="charastat-HP"></td></tr>
+        <tr><td><b>DEF: </b></td><td><input id="charastat-DEF"></td>
+        <td><b>SP: </b></td><td><input id="charastat-SP"></td></tr></table>
         <br>
-        <b>Weapon Level: </b> <input id="equipstat-weapon"><br>
-        <b>Armor Level: </b> <input id="equipstat-armor"><br>
+        <table><tr><td><b>Weapon Level: </b> <select id="equipstat-weapon"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td>
+        <td><b>Armor Level: </b> <select id="equipstat-armor"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td></tr></table>
         <br>
-        <b>Accesories ATK: </b> <input id="equipstat-acc_ATK"><br>
-        <b>Accesories DEF: </b> <input id="equipstat-acc_ATK"><br>
-        <b>Accesories HP: </b> <input id="equipstat-acc_ATK"><br>
-        <b>Accesories SP: </b> <input id="equipstat-acc_ATK"><br>
+        <table><tr><td><b>Accesories ATK: </b></td><td><input id="equipstat-acc_ATK"></td>
+        <td><b>Accesories HP: </b></td><td><input id="equipstat-acc_HP"></td></tr>
+        <tr><td><b>Accesories DEF: </b></td><td><input id="equipstat-acc_DEF"></td>
+        <td><b>Accesories SP: </b></td><td><input id="equipstat-acc_SP"></td></tr></table>
         <br><font style="size:120%;font-weight:bold">Results</font><br><br>
-        <b>ATK Dice: </b> <input class="results" id="status_ATK"><br>
-        <b>DEF Dice: </b> <input class="results" id="status_DEF"><br>
-        <b>HP: </b> <input class="results" id="status_HP"><br>
-        <b>SP: </b> <input class="results" id="status_SP"><br>
+        <table><tr><td><b>ATK Dice: </b></td><td><input class="results" id="status_ATK"></td>
+        <td><b>HP: </b></td><td><input class="results" id="status_HP"></td></tr>
+        <tr><td><b>DEF Dice: </b></td><td><input class="results" id="status_DEF"></td>
+        <td><b>SP: </b></td><td><input class="results" id="status_SP"></td></tr></table>
+        
+        <br><a href="javascript:void(0);" onclick="countDice()">Show Results</a>
         
         <script type='text/javascript' src='http://files.b1.jcink.com/html/jquery-1.7.2.min.js'></script>   
         <script>
@@ -82,8 +84,8 @@
             }
 
             function countDice() {
-                var maxATK = parseInt($("charastat-ATK").val());
-                var maxDEF = parseInt($("charastat-DEF").val());
+                var maxATK = parseInt($("#charastat-ATK").val());
+                var maxDEF = parseInt($("#charastat-DEF").val());
                 var baseHP = parseInt($("#charastat-HP").val());
                 var baseSP = parseInt($("#charastat-SP").val());
                 var levelweapon = parseInt($("#equipstat-weapon").val());
