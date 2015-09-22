@@ -1,19 +1,122 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-    
- 
-<script type='text/javascript' src='http://files.b1.jcink.com/html/jquery-1.7.2.min.js'></script>   
-<script>
-    var inventorylink = "http://alrevisacademy.jcink.net/index.php?act=store&code=view_inventory&memberid=2";
-    $.get(inventorylink , function( data ) {
-    var synth_in_inventory = [];
-    $(".shopitem",data).each(function(){ 
-        console.log($(this).find(".shopitem_image").text()); 
-    });
-   }); 
-</script>
-</body>
+    <body>
+        <h1>Dice Roll & Status Counter</h1>
+        <br><font style="size:120%;font-weight:bold">Status Input</font><br><br>
+        <b>ATK: </b> <input id="charastat-ATK"><br>
+        <b>DEF: </b> <input id="charastat-DEF"><br>
+        <b>HP: </b> <input id="charastat-HP"><br>
+        <b>SP: </b> <input id="charastat-SP"><br>
+        <br>
+        <b>Weapon Level: </b> <input id="equipstat-weapon"><br>
+        <b>Armor Level: </b> <input id="equipstat-armor"><br>
+        <br>
+        <b>Accesories ATK: </b> <input id="equipstat-acc_ATK"><br>
+        <b>Accesories DEF: </b> <input id="equipstat-acc_ATK"><br>
+        <b>Accesories HP: </b> <input id="equipstat-acc_ATK"><br>
+        <b>Accesories SP: </b> <input id="equipstat-acc_ATK"><br>
+        <br><font style="size:120%;font-weight:bold">Results</font><br><br>
+        <b>ATK Dice: </b> <input class="results" id="status_ATK"><br>
+        <b>DEF Dice: </b> <input class="results" id="status_DEF"><br>
+        <b>HP: </b> <input class="results" id="status_HP"><br>
+        <b>SP: </b> <input class="results" id="status_SP"><br>
+        
+        <script type='text/javascript' src='http://files.b1.jcink.com/html/jquery-1.7.2.min.js'></script>   
+        <script>
+            function factors(num) { 
+                var n_factors = [], i;
+                for (i = 1; i <= Math.floor(Math.sqrt(num)); i += 1)
+                    if (num % i === 0) {
+                        n_factors.push(i);
+                        if (num / i !== i) {
+                            n_factors.push(num / i);
+                        }
+                    }
+                n_factors.sort(function(a, b){return a - b;});  // numeric sort
+                return n_factors;
+            }
+
+            function factorsearch(arr_factor) {
+                var factorfound;
+                for (var i = arr_factor.length; i >= 0; i--) {
+                    if (arr_factor[i] <= 100) {
+                        factorfound = arr_factor[i];
+                        break
+                    }
+                }
+                return factorfound;
+            }
+
+            function frontval(basestat) {
+                if (basestat <= 2500) {
+                    var statfactors = factors(2*basestat);
+                    var secondvalue = factorsearch(statfactors);
+                    var firstvalue = (2*basestat)/secondvalue;
+                    if (firstvalue <= 50) {
+                        return ([firstvalue+"d"+secondvalue,0]);   
+                    }
+                    else {
+                        var pengalidepan = Math.ceil((2*basestat)/100);
+                        var angkabelakang = Math.ceil((2*basestat)/(10*pengalidepan));
+                        var perbedaaan = (10*pengalidepan*angkabelakang) - (2*basestat);
+                        return ([(pengalidepan*10)+"d"+angkabelakang,perbedaaan]);
+                    }
+                }
+                else {
+                    return (["Lo makan apa aja sih",0]);
+                }
+            }
+
+            var atkdefArray = [0,30,40,55,60,75,80,90,95,100];
+            var spArray = [0,20,35,40,45,55,55,60,70,75];
+            var hpArray = [0,40,55,60,65,75,75,80,90,100];
+
+
+            function status_sum(array,level){
+                var myTotal = 0;  
+
+                for(var i = 0; i < level; i++) {
+                        myTotal += array[i];  
+                }
+                return myTotal;
+            }
+
+            function countDice() {
+                var maxATK = parseInt($("charastat-ATK").val());
+                var maxDEF = parseInt($("charastat-DEF").val());
+                var baseHP = parseInt($("#charastat-HP").val());
+                var baseSP = parseInt($("#charastat-SP").val());
+                var levelweapon = parseInt($("#equipstat-weapon").val());
+                var levelarmor = parseInt($("#equipstat-armor").val());
+                var statusacc_ATK = parseInt($("#equipstat-acc_ATK").val());
+                var statusacc_DEF = parseInt($("#equipstat-acc_DEF").val());
+                var statusacc_HP = parseInt($("#equipstat-acc_HP").val());
+                var statusacc_SP = parseInt($("#equipstat-acc_SP").val());
+
+                if (isNaN(statusacc_ATK)) {statusacc_ATK = 0;}
+                if (isNaN(statusacc_DEF)) {statusacc_DEF = 0;}
+                if (isNaN(statusacc_HP)) {statusacc_HP = 0;}
+                if (isNaN(statusacc_SP)) {statusacc_SP = 0;}
+
+                var atkdepan = frontval(maxATK);
+                var defdepan = frontval(maxDEF);
+                var mutlakATK = status_sum(atkdefArray,levelweapon) + statusacc_ATK - atkdepan[1];
+                var mutlakDEF = status_sum(atkdefArray,levelarmor) + statusacc_DEF - defdepan[1];
+                var HPtotal = baseHP + status_sum(hpArray,levelarmor) + statusacc_HP;
+                var SPtotal = baseSP + status_sum(spArray,levelweapon) + statusacc_SP;
+
+                var diceATK = atkdepan[0]+ "+" + mutlakATK;
+                var diceDEF = defdepan[0]+ "+" + mutlakDEF;
+
+                $("#status_ATK").val(diceATK);
+                $("#status_DEF").val(diceDEF);
+                $("#status_HP").val(HPtotal);
+                $("#status_SP").val(SPtotal);
+            }
+            
+            $("input.results").on("click", function () {
+                $(this).select();
+            }); 
+        </script>
+    </body>
 </html>
