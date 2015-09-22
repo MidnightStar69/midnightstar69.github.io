@@ -3,23 +3,17 @@
     <body>
         <h1>Dice Roll & Status Counter</h1>
         <br><font style="size:120%;font-weight:bold">Status Input</font><br><br>
-        <table><tr><td><b>ATK: </b></td><td><input id="charastat-ATK"></td>
-        <td><b>HP: </b></td><td><input id="charastat-HP"></td></tr>
-        <tr><td><b>DEF: </b></td><td><input id="charastat-DEF"></td>
-        <td><b>SP: </b></td><td><input id="charastat-SP"></td></tr></table>
+        <table><tr><td><b>ATK: </b><br><b>DEF: </b></td><td><input class="masukan" id="charastat-ATK"><br><input class="masukan" id="charastat-DEF"></td>
+        <td><b>HP: </b><br><b>SP: </b></td><td><input class="masukan" id="charastat-HP"><br><input class="masukan" id="charastat-SP"></td></tr></table>
         <br>
-        <table><tr><td><b>Weapon Level: </b> <select id="equipstat-weapon"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td>
-        <td><b>Armor Level: </b> <select id="equipstat-armor"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td></tr></table>
+        <table><tr><td><b>Weapon Level: </b> <select class="masukan" id="equipstat-weapon"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td>
+        <td><b>Armor Level: </b> <select class="masukan" id="equipstat-armor"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td></tr></table>
         <br>
-        <table><tr><td><b>Accesories ATK: </b></td><td><input id="equipstat-acc_ATK"></td>
-        <td><b>Accesories HP: </b></td><td><input id="equipstat-acc_HP"></td></tr>
-        <tr><td><b>Accesories DEF: </b></td><td><input id="equipstat-acc_DEF"></td>
-        <td><b>Accesories SP: </b></td><td><input id="equipstat-acc_SP"></td></tr></table>
+        <table><tr><td><b>Accesories ATK: </b><br><b>Accesories DEF: </b></td><td><input class="masukan" id="equipstat-acc_ATK"><br><input class="masukan" id="equipstat-acc_DEF"></td>
+        <td><b>Accesories HP: </b><br><b>Accesories SP: </b></td><td><input class="masukan" id="equipstat-acc_HP"><br><input class="masukan" id="equipstat-acc_SP"></td></tr></table>
         <br><font style="size:120%;font-weight:bold">Results</font><br><br>
-        <table><tr><td><b>ATK Dice: </b></td><td><input class="results" id="status_ATK"></td>
-        <td><b>HP: </b></td><td><input class="results" id="status_HP"></td></tr>
-        <tr><td><b>DEF Dice: </b></td><td><input class="results" id="status_DEF"></td>
-        <td><b>SP: </b></td><td><input class="results" id="status_SP"></td></tr></table>
+        <table><tr><td><b>ATK Dice: </b><br><b>DEF Dice: </b></td><td><input class="results" id="status_ATK"><br><input class="results" id="status_DEF"></td>
+        <td><b>HP: </b><br><b>SP: </b></td><td><input class="results" id="status_HP"><br><input class="results" id="status_SP"></td></tr></table>
         
         <br><a href="javascript:void(0);" onclick="countDice()">Show Results</a>
         
@@ -59,9 +53,9 @@
                     }
                     else {
                         var pengalidepan = Math.ceil((2*basestat)/100);
-                        var angkabelakang = Math.ceil((2*basestat)/(10*pengalidepan));
-                        var perbedaaan = (10*pengalidepan*angkabelakang) - (2*basestat);
-                        return ([(pengalidepan*10)+"d"+angkabelakang,perbedaaan]);
+                        var angkabelakang = Math.ceil((2*basestat)/(pengalidepan));
+                        var perbedaaan = (pengalidepan*angkabelakang) - (2*basestat);
+                        return ([(pengalidepan)+"d"+angkabelakang,perbedaaan]);
                     }
                 }
                 else {
@@ -119,6 +113,10 @@
             $("input.results").on("click", function () {
                 $(this).select();
             }); 
+            
+            $( ".masukan" ).change(function() {
+              countDice();
+            });
         </script>
     </body>
 </html>
