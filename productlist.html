@@ -2,34 +2,21 @@
 <html>
     <head>
         <title>Product List</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato|Oswald|Roboto" rel="stylesheet"> 
+       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400,700|Roboto:300,400,700" rel="stylesheet"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">       </script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <style type="text/css">
 
-            label{ 
-                display: inline-block; vertical-align: top; width: 37%; 
-            }
             
-            input, textarea, select { 
-                display: inline-block; vertical-align: top; width: 60%; 
-            }
-            
-            input[type=radio] {
-                width:5%;
-                margin:0px;
-            }
             
             body {
-                background-color:#a4bf33;
+                background-color:#fefefe;
                 font-family:Roboto,sans-serif;
-                font-weight:100;
-                color:#fff;
+                color:#99b220;
                 font-size:12px;
                 margin:0px;
-                
             }
             
             ::-webkit-scrollbar { 
@@ -42,13 +29,21 @@
                 font-size:40px;
                 text-align:right;
                 letter-spacing:-1px;
-                color:#f3f5e8;
+                color:#a1b923;
+                font-weight:300;
             }
+            
+            #banner {
+                text-align:center;
+                background-color:#bad629;
+                width:100%;
+            }
+            
             
    
             .productlist_fieldset {
                 width: 35%;
-                border:3px solid #f3f5e8;
+                border:2px solid #bad629;
                 border-radius: 10px;
                 margin-bottom:10px;
                 padding-left:15px;
@@ -67,29 +62,29 @@
             }
             
             #reccomended_products  {
-                color:#60701c;
-                background: #f6fdd4;
+                color:#fefefe;
+                background: #bad629;
                 width:100%;
                 
             }
             #reccomended_products .productlist_fieldset {
-              border:3px solid #bbd451; 
+              border:3px solid #fefefe; 
             }
             
             
             
             button {
-                color: #819a24;
-                background-color: #f3f5e8;
-                border:1px solid #f3f5e8;
+                color: #fefefe;
+                background-color: #bad629;
+                border:1px solid #bad629;
                 border-radius:10px;
                 font-size:20px;
             }
             
             #reccomended_products button {
-                background-color: #bbd451;
-                border: 1px solid #bbd451;
-                color: #f3f5e8
+                background-color: #fefefe;
+                border: 1px solid #fefefe;
+                color: #bbd451;
             }
             
             .button-holder {
@@ -109,7 +104,7 @@
             #moveto_cart {
                 position:fixed;
                 bottom:0px;
-                background-color: #f3f5e8;
+                background-color: #bad629;
                 width:100%;
                 text-align:center;
                 padding: 20px 10px;
@@ -117,9 +112,9 @@
             
             #moveto_cart button {
                 margin:auto;
-                background-color: #819a24;
-                color: #f3f5e8;
-                border:1px solid #819a24;
+                background-color: #fefefe;
+                color: #bad629;
+                border:1px solid #fefefe;
                 border-radius:10px;
                 font-family:Oswald;
                 text-transform:uppercase;
@@ -133,6 +128,11 @@
     </head>
     
     <body>
+        
+        <div id="banner">
+            <img style="width:70%" src="http://kyunfai.b1.jcink.com/uploads/kyunfai/IMG_20161019_WA0004.jpg">
+        
+        </div>
         
         <div id="header_logo">
          Product List
