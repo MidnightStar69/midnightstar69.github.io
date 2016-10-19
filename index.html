@@ -3,18 +3,23 @@
     <head>
         <title>Sign Up</title>
         <link href="https://fonts.googleapis.com/css?family=Lato|Oswald|Roboto" rel="stylesheet"> 
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <style type="text/css">
 
             label, input, textarea, select { 
                 display: inline-block; vertical-align: top; width: 30%; 
-            }    
+            }
+            input[type=radio] {
+                width:10%
+            }
             
             body {
-                background-color:#c8dd5c;
-                font-family:Lato,sans-serif;
+                background-color:#bcd74a;
+                font-family:Roboto,sans-serif;
                 font-weight:100;
-                
+                color:#fff;
             }
             
             #header_logo {
@@ -23,15 +28,36 @@
                 font-size:40px;
                 text-align:right;
                 letter-spacing:-1px;
+                color:#f3f5e8;
             }
             
             #signup_form {
-                background-color:#f3f5e8;
                 border-radius: 10px;
-                border:5px solid #23261d;
                 padding:20px;
+                margin-top:-15px;
             }
-
+            
+            .signup_fieldset {
+                border:3px solid #f3f5e8;
+                border-radius: 10px;
+                margin-bottom:10px;
+                padding-left:15px;
+            }
+            
+            .signup_fieldset ul {
+                padding-left:0px;   
+            }
+            .signup_fieldset li {
+                list-style-type:none;
+                margin-bottom:5px;
+            }
+            
+            .signup_fieldset input {
+                background-color: #f3f5e8;
+                color:#819a24;
+                border:1px solid #f3f5e8;
+                
+            }
         </style>
     </head>
     
@@ -46,31 +72,50 @@
               <fieldset class="signup_fieldset">
                 <legend>Account Information</legend>
                 <ul>
-                  <li>
+                    <li>
                     <label for="Name">Name</label>
                     <input id="Name" name="Name" />
-                  </li>
-                  <li>
+                    </li>
+                    <li>
                     <label for="email">Email</label>
                     <input id="email" name="email" />
-                  </li>
+                    </li>
+                    <li>
+                    <label for="mobile">Mobile Number</label>
+                    <input id="mobile" name="mobile" />
+                    </li>
+                    <li>
+                    <label for="password1">Password</label>
+                    <input id="password1" name="password1" type="password" />
+                    </li>
+                    <label for="password2">Confirm Password</label>
+                    <input id="password2" name="password2" type="password" />
+                    </li>
                 </ul>
               </fieldset>
-              <fieldset>
+              <fieldset class="signup_fieldset">
                 <legend>Personal Information</legend>
                 <ul>
                   <li>
                     <label for="dateofbirth">Date of Birth</label>
-                    <input id="dateofbirth" name="dateofbirth" />
+                    <input id="dateofbirth" name="dateofbirth" type="datetime" />
                   </li>
                   <li>
                     <label for="sex">Sex</label>
-                    <input id="sex" name="sex" />
+                    <input id="sex" type="radio" name="sex" value ="male"/> Male<br/>
+                    <input id="sex" type="radio" name="sex" value ="female"/> Female<br/>
                   </li>
                 </ul>
               </fieldset>
             </form>          
         </div>
+    
+    
+        <script>
+            $(function() {
+                $( "#dateofbirth" ).datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true,changeYear: true}); 
+            });
+        </script>
     </body>
 </html>
 
