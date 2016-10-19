@@ -9,10 +9,10 @@
         <style type="text/css">
 
             label, input, textarea, select { 
-                display: inline-block; vertical-align: top; width: 30%; 
+                display: inline-block; vertical-align: top; width: 45%; 
             }
             input[type=radio] {
-                width:10%
+                width:5%
             }
             
             body {
@@ -20,6 +20,7 @@
                 font-family:Roboto,sans-serif;
                 font-weight:100;
                 color:#fff;
+                font-size:12px;
             }
             
             #header_logo {
@@ -42,6 +43,7 @@
                 border-radius: 10px;
                 margin-bottom:10px;
                 padding-left:15px;
+                font-size:16px;
             }
             
             .signup_fieldset ul {
@@ -50,6 +52,7 @@
             .signup_fieldset li {
                 list-style-type:none;
                 margin-bottom:5px;
+                font-size:12px;
             }
             
             .signup_fieldset input {
@@ -57,6 +60,13 @@
                 color:#819a24;
                 border:1px solid #f3f5e8;
                 
+            }
+            
+            #submit_signup {
+                margin:auto;
+                color: #819a24;
+                background-color: #f3f5e8;
+                border:1px solid #f3f5e8;
             }
         </style>
     </head>
@@ -88,6 +98,7 @@
                     <label for="password1">Password</label>
                     <input id="password1" name="password1" type="password" />
                     </li>
+                    <li>
                     <label for="password2">Confirm Password</label>
                     <input id="password2" name="password2" type="password" />
                     </li>
@@ -105,15 +116,30 @@
                     <input id="sex" type="radio" name="sex" value ="male"/> Male
                     <input id="sex" type="radio" name="sex" value ="female"/> Female
                   </li>
+                   <li>
+                    <label for="height">Height</label>
+                    <input id="height" name="height"/> cm
+                  </li> 
+                    <li>
+                    <label for="weight">Weight</label>
+                    <input id="weight" name="weight"/> kg
+                  </li>
+                    <li>
+                    <label for="activity">Activity</label>
+                    <input id="activity" type="radio" name="activity" value ="sport"/> Sport
+                    <input id="activity" type="radio" name="activity" value ="work"/> Work
+                    <input id="activity" type="radio" name="activity" value ="other"/> Other
+                  </li>
                 </ul>
               </fieldset>
+                <div style="text-align:center;"><button id="submit_signup">Register</button></div>
             </form>          
         </div>
     
     
         <script>
             $(function() {
-                $( "#dateofbirth" ).datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true,changeYear: true}); 
+                $( "#dateofbirth" ).datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true,changeYear: true,yearRange: "-100:+0"}); 
             });
         </script>
     </body>
