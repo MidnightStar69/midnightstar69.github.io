@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Product List</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato|Oswald|Roboto" rel="stylesheet"> 
+        <title>Sign Up</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:300,400,700|Roboto:300,400,700" rel="stylesheet"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">       </script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <style type="text/css">
 
@@ -23,13 +22,11 @@
             }
             
             body {
-                background-color:#a4bf33;
+                background-color:#fefefe;
                 font-family:Roboto,sans-serif;
-                font-weight:100;
-                color:#fff;
+                color:#99b220;
                 font-size:12px;
                 margin:0px;
-                
             }
             
             ::-webkit-scrollbar { 
@@ -42,133 +39,146 @@
                 font-size:40px;
                 text-align:right;
                 letter-spacing:-1px;
-                color:#f3f5e8;
+                color:#a1b923;
+                font-weight:300;
             }
             
-   
-            .productlist_fieldset {
-                width: 35%;
-                border:3px solid #f3f5e8;
+            #signup_form {
+                border-radius: 10px;
+                padding:5px;
+            }
+            
+            .signup_fieldset {
+                border:2px solid #bad629;
                 border-radius: 10px;
                 margin-bottom:10px;
                 padding-left:15px;
                 font-size:16px;
                 font-family:Oswald;
-                font-size:15px;
-                font-weight:100;
+                font-size:30px;
                 text-transform:lowercase;
-                display:inline-block;
-                text-align:left;
+                letter-spacing:-1px;
+                font-weight:300;
             }
             
-            .productlist_category {
-                text-align:center;   
-                
+            .signup_fieldset ul {
+                padding-left:0px;   
+            }
+            .signup_fieldset li {
+                list-style-type:none;
+                margin-bottom:8px;
+                font-size:12px;
+                font-family:Roboto,sans-serif;
+                text-transform:none;
+                letter-spacing:0px;
+                font-weight:400px;
             }
             
-            #reccomended_products  {
-                color:#60701c;
-                background: #f6fdd4;
-                width:100%;
-                
-            }
-            #reccomended_products .productlist_fieldset {
-              border:3px solid #bbd451; 
+            .signup_fieldset input {
+                background-color: #bad629;
+                color:#fefefe;
+                border:1px solid #bad629;
+                border-radius:3px;
+                font-family:Roboto,sans-serif;
             }
             
-            
-            
-            button {
-                color: #819a24;
-                background-color: #f3f5e8;
-                border:1px solid #f3f5e8;
-                border-radius:10px;
-                font-size:20px;
-            }
-            
-            #reccomended_products button {
-                background-color: #bbd451;
-                border: 1px solid #bbd451;
-                color: #f3f5e8
-            }
-            
-            .button-holder {
-                text-align:center;
-                margin-top:10px;
-            }
-            
-            .image_holder {
-                width:80%;
-                height:100px;
+            #submit_signup {
                 margin:auto;
-                background-size:150%;
-                background-position:center;
+                color: #fefefe;
+                background-color: #bad629;
+                border:1px solid #bad629;
                 border-radius:10px;
+                font-family:Oswald;
+                text-transform:uppercase;
+                font-size:15px;
+                padding:10px 5px;
+                width:40%;
+                font-weight:300;
+                margin-top:10px;
+                margin-bottom:15px;
             }
             
+            #banner {
+                text-align:center;
+                background-color:#bad629;
+                width:100%;
+            }
         </style>
     </head>
     
     <body>
         
-        <div id="header_logo">
-         Product List
+        <div id="banner">
+            <img style="width:70%" src="http://kyunfai.b1.jcink.com/uploads/kyunfai/IMG_20161019_WA0004.jpg">
+        
         </div>
         
-        <div id="reccomended_products" class="productlist_category">
-            <div class="header_text">Recommended Products</div>
+        <div id="header_logo">
+         Sign Up
+        </div>
         
         
-              <fieldset class="productlist_fieldset">
-                <legend>Spinach</legend>
-                  <div class="image_holder" style="background-image:url('http://kyunfai.b1.jcink.com/uploads/kyunfai/bayem.jpg');"></div>
-                    <div class="button-holder">
-                    <button title="View Information"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
-                    <button title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button></div>
+        <div id="signup_form">
+            <form>
+              <fieldset class="signup_fieldset">
+                <legend>Account Information</legend>
+                <ul>
+                    <li>
+                    <label for="Name">Name</label>
+                    <input id="Name" name="Name" />
+                    </li>
+                    <li>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" />
+                    </li>
+                    <li>
+                    <label for="mobile">Mobile Number</label>
+                    <input id="mobile" name="mobile" />
+                    </li>
+                    <li>
+                    <label for="password1">Password</label>
+                    <input id="password1" name="password1" type="password" />
+                    </li>
+                </ul>
               </fieldset>
-        
-            <fieldset class="productlist_fieldset">
-                <legend>Carrot</legend>
-                 <div class="image_holder" style="background-image:url('http://kyunfai.b1.jcink.com/uploads/kyunfai/wortel.jpg');"></div>
-                   <div class="button-holder">
-                    <button title="View Information"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
-                    <button title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button></div>
+              <fieldset class="signup_fieldset">
+                <legend>Personal Information</legend>
+                <ul>
+                  <li>
+                    <label for="dateofbirth">Date of Birth</label>
+                    <input id="dateofbirth" name="dateofbirth" type="datetime" />
+                  </li>
+                  <li>
+                    <label for="sex">Sex</label>
+                    <input id="sex" type="radio" name="sex" value ="male"/> Male
+                    <input id="sex" type="radio" name="sex" value ="female"/> Female
+                  </li>
+                   <li>
+                    <label for="height">Height (cm)</label>
+                    <input id="height" name="height"/>
+                  </li> 
+                    <li>
+                    <label for="weight">Weight (kg)</label>
+                    <input id="weight" name="weight"/>
+                  </li>
+                    <li>
+                    <label for="activity">Activity</label>
+                    <input id="activity" type="radio" name="activity" value ="sport"/> Sport
+                    <input id="activity" type="radio" name="activity" value ="work"/> Work
+                    <input id="activity" type="radio" name="activity" value ="other"/> Other
+                  </li>
+                </ul>
               </fieldset>
-            </div>
-        
-            <div id="other_products" class="productlist_category">        
-              <fieldset class="productlist_fieldset">
-                <legend>Tomato</legend>
-                 <div class="image_holder" style="background-image:url('http://kyunfai.b1.jcink.com/uploads/kyunfai/tomat.jpg');"></div>
-                   <div class="button-holder">
-                    <button title="View Information"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
-                    <button title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button></div>
-              </fieldset>
-        
-            <fieldset class="productlist_fieldset">
-                <legend>Mint</legend>
-                 <div class="image_holder" style="background-image:url('http://kyunfai.b1.jcink.com/uploads/kyunfai/mint.jpg');"></div>
-                    <div class="button-holder">
-                    <button title="View Information"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
-                    <button title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button></div>
-              </fieldset>
-                
-                <fieldset class="productlist_fieldset">
-                <legend>Ginger</legend>
-                 <div class="image_holder" style="background-image:url('http://kyunfai.b1.jcink.com/uploads/kyunfai/jahe.jpg');"></div>
-                    <div class="button-holder">
-                    <button title="View Information"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
-                    <button title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button></div>
-              </fieldset>
-                
-                <fieldset class="productlist_fieldset">
-                <legend>Cabbage</legend>
-                 <div class="image_holder" style="background-image:url('http://kyunfai.b1.jcink.com/uploads/kyunfai/konis.jpg');"></div>
-                    <div class="button-holder">
-                    <button title="View Information"><i class="fa fa-file-text-o" aria-hidden="true"></i></button>
-                    <button title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button></div>
-              </fieldset>
-            </div>
+                <div style="text-align:center;"><button id="submit_signup">Register</button></div>
+            </form>          
+        </div>
+    
+    
+        <script>
+            $(function() {
+                $( "#dateofbirth" ).datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true,changeYear: true,yearRange: "-100:+0"}); 
+            });
+        </script>
     </body>
 </html>
 
