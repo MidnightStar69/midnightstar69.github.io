@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Oswald|Roboto" rel="stylesheet"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <style type="text/css">
+
+            label{ 
+                display: inline-block; vertical-align: top; width: 37%; 
+            }
+            
+            input, textarea, select { 
+                display: inline-block; vertical-align: top; width: 60%; 
+            }
+            
+            input[type=radio] {
+                width:5%;
+                margin:0px;
+            }
+            
+            body {
+                background-color:#a4bf33;
+                font-family:Roboto,sans-serif;
+                font-weight:100;
+                color:#fff;
+                font-size:12px;
+                
+            }
+            
+            ::-webkit-scrollbar { 
+                display: none; 
+            }
+            
+            #header_logo {
+                font-family:Oswald,sans-serif;
+                text-transform:uppercase;
+                font-size:40px;
+                text-align:right;
+                letter-spacing:-1px;
+                color:#f3f5e8;
+            }
+            
+            #signup_form {
+                border-radius: 10px;
+                padding:5px;
+            }
+            
+            .signup_fieldset {
+                border:3px solid #f3f5e8;
+                border-radius: 10px;
+                margin-bottom:10px;
+                padding-left:15px;
+                font-size:16px;
+                font-family:Oswald;
+                font-size:30px;
+                text-transform:lowercase;
+                letter-spacing:-1px;
+            }
+            
+            .signup_fieldset ul {
+                padding-left:0px;   
+            }
+            .signup_fieldset li {
+                list-style-type:none;
+                margin-bottom:8px;
+                font-size:12px;
+                font-family:Roboto,sans-serif;
+                text-transform:none;
+                letter-spacing:0px;
+            }
+            
+            .signup_fieldset input {
+                background-color: #f3f5e8;
+                color:#60701c;
+                border:1px solid #f3f5e8;
+                border-radius:3px;
+            }
+            
+            #submit_signup {
+                margin:auto;
+                color: #819a24;
+                background-color: #f3f5e8;
+                border:1px solid #f3f5e8;
+                border-radius:10px;
+                font-family:Oswald;
+                text-transform:uppercase;
+                font-size:15px;
+                padding:10px 5px;
+                width:40%;
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <div id="header_logo">
+         Sign Up
+        </div>
+        
+        
+        <div id="signup_form">
+            <form>
+              <fieldset class="signup_fieldset">
+                <legend>Account Information</legend>
+                <ul>
+                    <li>
+                    <label for="Name">Name</label>
+                    <input id="Name" name="Name" />
+                    </li>
+                    <li>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" />
+                    </li>
+                    <li>
+                    <label for="mobile">Mobile Number</label>
+                    <input id="mobile" name="mobile" />
+                    </li>
+                    <li>
+                    <label for="password1">Password</label>
+                    <input id="password1" name="password1" type="password" />
+                    </li>
+                </ul>
+              </fieldset>
+              <fieldset class="signup_fieldset">
+                <legend>Personal Information</legend>
+                <ul>
+                  <li>
+                    <label for="dateofbirth">Date of Birth</label>
+                    <input id="dateofbirth" name="dateofbirth" type="datetime" />
+                  </li>
+                  <li>
+                    <label for="sex">Sex</label>
+                    <input id="sex" type="radio" name="sex" value ="male"/> Male
+                    <input id="sex" type="radio" name="sex" value ="female"/> Female
+                  </li>
+                   <li>
+                    <label for="height">Height (cm)</label>
+                    <input id="height" name="height"/>
+                  </li> 
+                    <li>
+                    <label for="weight">Weight (kg)</label>
+                    <input id="weight" name="weight"/>
+                  </li>
+                    <li>
+                    <label for="activity">Activity</label>
+                    <input id="activity" type="radio" name="activity" value ="sport"/> Sport
+                    <input id="activity" type="radio" name="activity" value ="work"/> Work
+                    <input id="activity" type="radio" name="activity" value ="other"/> Other
+                  </li>
+                </ul>
+              </fieldset>
+                <div style="text-align:center;"><button id="submit_signup">Register</button></div>
+            </form>          
+        </div>
+    
+    
+        <script>
+            $(function() {
+                $( "#dateofbirth" ).datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true,changeYear: true,yearRange: "-100:+0"}); 
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
