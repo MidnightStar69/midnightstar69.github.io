@@ -107,7 +107,8 @@
                 background-color: #bad629;
                 width:100%;
                 text-align:center;
-                padding: 20px 10px;
+                padding: 15px 10px;
+                z-index:15;
             }
             
             #moveto_cart button {
@@ -118,16 +119,75 @@
                 border-radius:10px;
                 font-family:Roboto;
                 text-transform:uppercase;
-                font-size:15px;
+                font-size:13px;
                 padding:10px 5px;
                 width:40%;
                 
             }
             
+            .cover {
+                position: fixed;
+              top: 50%;
+              left: 50%;
+              margin-top: -500px;
+              margin-left: -500px;
+                width:1000px;
+                height:1000px;
+                background-color:#000;
+                z-index:10;
+                opacity: 0.7
+            }
+            
+            .centered {
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              margin-top: -44%;
+              margin-left: -40%;
+                width:80%;
+                height:58%;
+                background-color:#fafafa;
+                z-index:15;
+                border-radius:10px;
+            }
+            .centered label {
+                width:49%;
+                display:inline-block;
+                vertical-align:top;
+                margin-bottom:5px;
+                text-align:justify;
+                font-size:12px;
+                text-transform:none;
+            }
+            
+            .centered fieldset {
+                font-family:Roboto;
+                font-size:20px;
+                font-weight:100;
+                text-transform:lowercase;
+                 border:2px solid #bad629;
+            }
         </style>
     </head>
     
     <body>
+        
+        <div class="cover"></div>
+        <div class="centered">
+            <fieldset style="margin:10px;border-radius:5px;">
+                <legend>Carrot</legend>
+                <div class="image_holder" style="background-image:url('http://kyunfai.b1.jcink.com/uploads/kyunfai/wortel.jpg');margin-bottom:10px;"></div>
+                <label>Type</label> <label>Root</label>
+                <label>Weight (gr)</label> <i class="fa fa-minus" aria-hidden="true"></i>
+ <input style="width:20%;vertical-align:top;display:inline-block;"> <i class="fa fa-plus" aria-hidden="true"></i>
+
+                <label>Price per unit</label> <label>Rp 5 / gr</label>
+                <label>Harvest Time</label> <label>day-month-year</label>
+                <label>Description</label> <label>Contains Betacarotene, Fiber and Pro-vitamin A. Essential for your eyesight and immunity, also protect you from cancer.</label>
+            </fieldset>
+            <div style="text-align:center"><button title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>< /div>
+        
+        </div>
         
         <div id="banner">
             <img style="width:70%" src="http://kyunfai.b1.jcink.com/uploads/kyunfai/IMG_20161019_WA0004.jpg">
