@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-      <title>Delivery and Payment</title>
-       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> 
+    <head>
+        <title>Sign Up</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">       </script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <style>
-      body,html {
+        <style type="text/css">
+
+            label{ 
+                display: inline-block; vertical-align: top; width: 37%; 
+            }
+            
+            input, textarea, select { 
+                display: inline-block; vertical-align: top; width: 60%; 
+            }
+            
+            input[type=radio] {
+                width:5%;
+                margin:0px;
+            }
+            
+            body {
                 background-color:#fefefe;
                 font-family:Roboto,sans-serif;
                 color:#99b220;
                 font-size:12px;
                 margin:0px;
-                height: 100%;
             }
             
             ::-webkit-scrollbar { 
@@ -33,287 +43,146 @@
                 font-weight:300;
             }
             
+            #signup_form {
+                border-radius: 10px;
+                padding:5px;
+            }
+            
+            .signup_fieldset {
+                border:2px solid #bad629;
+                border-radius: 10px;
+                margin-bottom:10px;
+                padding-left:15px;
+                font-family:Roboto;
+                font-size:20px;
+                text-transform:lowercase;
+                letter-spacing:-1px;
+                font-weight:300;
+            }
+            
+            .signup_fieldset ul {
+                padding-left:0px;   
+            }
+            .signup_fieldset li {
+                list-style-type:none;
+                margin-bottom:8px;
+                font-size:12px;
+                font-family:Roboto,sans-serif;
+                text-transform:none;
+                letter-spacing:0px;
+                font-weight:400px;
+            }
+            
+            .signup_fieldset input {
+                background-color: #fefefe;
+                color:#a1b923;
+                border:1px solid #bad629;
+                border-radius:3px;
+                font-family:Roboto,sans-serif;
+            }
+            
+            #submit_signup {
+                margin:auto;
+                color: #fefefe;
+                background-color: #bad629;
+                border:1px solid #bad629;
+                border-radius:10px;
+                font-family:Roboto;
+                text-transform:uppercase;
+                font-size:15px;
+                padding:10px 5px;
+                width:40%;
+                font-weight:300;
+                margin-top:10px;
+                margin-bottom:15px;
+            }
+            
             #banner {
                 text-align:center;
                 background-color:#bad629;
                 width:100%;
             }
-            
-            
-   
-            .productlist_fieldset {
-                width: 80%;
-                border:2px solid #bad629;
-                border-radius: 10px;
-                margin-bottom:10px;
-                padding-left:15px;
-           
-                display:inline-block;
-                text-align:left;
-            }
-            
-            .productlist_category {
-                text-align:center;   
-                
-            }
-            
-            .productlist_fieldset label {
-                width:48%;  
-                display:inline-block;
-                margin-bottom:7px;
-            }
-            
-            .productlist_fieldset legend {
-                     font-family:Roboto;
-                font-size:15px;
-                font-weight:100;
-                text-transform:lowercase;   
-                margin-bottom:10px;
-            }
-            
-            
-            button {
-                color: #fefefe;
-                background-color: #bad629;
-                border:1px solid #bad629;
-                border-radius:10px;
-                font-size:20px;
-            }
-            
-            .button-holder {
-                text-align:center;
-                margin-top:10px;
-            }
-            
-            .image_holder {
-                width:80%;
-                height:100px;
-                margin:auto;
-                background-size:150%;
-                background-position:center;
-                border-radius:10px;
-            }
-            
-            #moveto_cart {
-                position:fixed;
-                bottom:0px;
-                background-color: #bad629;
-                width:100%;
-                text-align:center;
-                padding: 15px 10px;
-                z-index:15;
-            }
-            
-            #moveto_cart button {
-                margin:auto;
-                background-color: #fefefe;
-                color: #bad629;
-                border:1px solid #fefefe;
-                border-radius:10px;
-                font-family:Roboto;
-                text-transform:uppercase;
-                font-size:13px;
-                padding:10px 5px;
-                width:40%;
-                
-            }
-      #map {
-        height: 100%;
-        width:80%;
-          margin:auto;
-      }
-      .controls {
-        margin-top: 10px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
-
-      #origin-input,
-      #destination-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 200px;
-      }
-
-      #origin-input:focus,
-      #destination-input:focus {
-        border-color: #4d90fe;
-      }
-
-      #mode-selector {
-        color: #fff;
-        background-color: #4d90fe;
-        margin-left: 12px;
-        padding: 5px 11px 0px 11px;
-      }
-
-      #mode-selector label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-
-    </style>
-  </head>
-  <body>
-       <div id="banner">
+        </style>
+    </head>
+    
+    <body>
+        
+        <div id="banner">
             <img style="width:70%" src="http://kyunfai.b1.jcink.com/uploads/kyunfai/IMG_20161019_WA0004.jpg">
         
         </div>
-       <div id="header_logo">
-         Delivery & Payment
+        
+        <div id="header_logo">
+         Sign Up
         </div>
-      
-      
-      
-      <div id="moveto_cart"><button>Order Vegetables</button></div>
-
-      <fieldset class="productlist_fieldset" style="display:block;height:50%;margin:auto;text-align:center;margin-top:15px;">
-                  <legend style="text-align:left">delivery options</legend>
-   <div id="address_picker" style="height:80%;"><input id="destination-input" class="controls" type="text"
-        placeholder="Pick address">
-
-    <div id="mode-selector" class="controls" style="display:none">
-      <input type="radio" name="type" id="changemode-walking" checked="checked">
-      <label for="changemode-walking">Walking</label>
-
-      <input type="radio" name="type" id="changemode-transit">
-      <label for="changemode-transit">Transit</label>
-
-      <input type="radio" name="type" id="changemode-driving" checked="checked">
-      <label for="changemode-driving">Driving</label>
-    </div>
-      
-    <div id="map"></div>
-       </div>
-          <br><label>Delivery cost: </label> <label>Rp 0</label>
-      </fieldset>
-      <div id="other_products" class="productlist_category" style="margin-bottom:90px;margin-top:20px;">        
-              <fieldset class="productlist_fieldset">
-                  <legend>payment options</legend>
-                    <label>Total </label> <label>Rp 0</label>
-                    <label>Payment</label><input id="sex" type="radio" name="sex" value ="male"/> Cash on Delivery<br>
-                    <label></label><input id="sex" type="radio" name="sex" value ="female"/> Bank Transfer
+        
+        
+        <div id="signup_form">
+            <form>
+              <fieldset class="signup_fieldset">
+                <legend>Account Information</legend>
+                <ul>
+                    <li>
+                    <label for="Name">Name</label>
+                    <input id="Name" name="Name" />
+                    </li>
+                    <li>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" />
+                    </li>
+                    <li>
+                    <label for="mobile">Mobile Number</label>
+                    <input id="mobile" name="mobile" />
+                    </li>
+                    <li>
+                    <label for="password1">Password</label>
+                    <input id="password1" name="password1" type="password" />
+                    </li>
+                </ul>
               </fieldset>
+              <fieldset class="signup_fieldset">
+                <legend>Personal Information</legend>
+                <ul>
+                  <li>
+                    <label for="dateofbirth">Date of Birth</label>
+                    <input id="dateofbirth" name="dateofbirth" type="datetime" />
+                  </li>
+                  <li>
+                    <label for="sex">Sex</label>
+                    <input id="sex" type="radio" name="sex" value ="male"/> Male
+                    <input id="sex" type="radio" name="sex" value ="female"/> Female
+                  </li>
+                   <li>
+                    <label for="height">Height (cm)</label>
+                    <input id="height" name="height"/>
+                  </li> 
+                    <li>
+                    <label for="weight">Weight (kg)</label>
+                    <input id="weight" name="weight"/>
+                  </li>
+                    <li>
+                    <label for="activity">Activity</label>
+                    <input id="activity" type="radio" name="activity" value ="sport"/> Sport
+                    <input id="activity" type="radio" name="activity" value ="work"/> Work
+                    <input id="activity" type="radio" name="activity" value ="other"/> Other
+                  </li>
+                </ul>
+              </fieldset>
+                <div style="text-align:center;"><button id="submit_signup">Register</button></div>
+            </form>          
         </div>
-
-    <script>
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-      function initMap() {
-        var origin_place_id = "ChIJg7HJZ1fmaC4RYXnj3NzjeCQ";
-        var destination_place_id = null;
-        var travel_mode = 'WALKING';
-        var map = new google.maps.Map(document.getElementById('map'), {
-          mapTypeControl: false,
-          center: {lat: -33.8688, lng: 151.2195},
-          zoom: 13
-        });
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        directionsDisplay.setMap(map);
-        directionsDisplay.setPanel(document.getElementById('dvPanel'));
-
-        var origin_input = document.getElementById('origin-input');
-        var destination_input = document.getElementById('destination-input');
-        var modes = document.getElementById('mode-selector');
-
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(origin_input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(destination_input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(modes);
-
-        var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
-        origin_autocomplete.bindTo('bounds', map);
-        var destination_autocomplete =
-            new google.maps.places.Autocomplete(destination_input);
-        destination_autocomplete.bindTo('bounds', map);
-
-        // Sets a listener on a radio button to change the filter type on Places
-        // Autocomplete.
-        function setupClickListener(id, mode) {
-          var radioButton = document.getElementById(id);
-          radioButton.addEventListener('click', function() {
-            travel_mode = mode;
-          });
-        }
-        setupClickListener('changemode-walking', 'WALKING');
-        setupClickListener('changemode-transit', 'TRANSIT');
-        setupClickListener('changemode-driving', 'DRIVING');
-
-        function expandViewportToFitPlace(map, place) {
-          if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-          } else {
-            map.setCenter(place.geometry.location);
-            map.setZoom(17);
-          }
-        }
-
-        origin_autocomplete.addListener('place_changed', function() {
-          var place = origin_autocomplete.getPlace();
-          if (!place.geometry) {
-            window.alert("Autocomplete's returned place contains no geometry");
-            return;
-          }
-          expandViewportToFitPlace(map, place);
-
-          // If the place has a geometry, store its place ID and route if we have
-          // the other place ID
-          origin_place_id = place.place_id;
-          route(origin_place_id, destination_place_id, travel_mode,
-                directionsService, directionsDisplay);
-        });
-
-        destination_autocomplete.addListener('place_changed', function() {
-          var place = destination_autocomplete.getPlace();
-          if (!place.geometry) {
-            window.alert("Autocomplete's returned place contains no geometry");
-            return;
-          }
-          expandViewportToFitPlace(map, place);
-
-          // If the place has a geometry, store its place ID and route if we have
-          // the other place ID
-          destination_place_id = place.place_id;
-          route(origin_place_id, destination_place_id, travel_mode,
-                directionsService, directionsDisplay);
-        });
-
-        function route(origin_place_id, destination_place_id, travel_mode,
-                       directionsService, directionsDisplay) {
-          if (!origin_place_id || !destination_place_id) {
-            return;
-          }
-          directionsService.route({
-            origin: {'placeId': origin_place_id},
-            destination: {'placeId': destination_place_id},
-            travelMode: travel_mode
-          }, function(response, status) {
-            if (status === 'OK') {
-              directionsDisplay.setDirections(response);
-            } else {
-              window.alert('Directions request failed due to ' + status);
-            }
-          });
-        }
-          
-          
-          
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxToH-Njoe2eEERhGAzgjAUpDesKsUVw4&libraries=places&callback=initMap"
-        async defer></script>
-  </body>
+    
+    
+        <script>
+            $(function() {
+                $( "#dateofbirth" ).datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true,changeYear: true,yearRange: "-100:+0"}); 
+            });
+        </script>
+    </body>
 </html>
+
+
+
+
+
+
