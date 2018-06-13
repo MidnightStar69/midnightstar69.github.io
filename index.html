@@ -31,18 +31,30 @@
 		}
 		#forumtitle{
 			position:absolute;
-			top:185px;width:899px;
+			top:135px;width:899px;
 			color:#fff;
 			font-family:Space Mono;opacity:0.8;display:none;
 		}
 
 		.smalltitle {font-size:10px;text-transform:uppercase;}
 		#bigtitle {font-size:50px;text-transform:uppercase;font-weight:bold;line-height:60px;margin-bottom:2px;}
+
+		#animation {width: 699px;height:400px;
+					overflow: hidden;margin:auto;}
 		#animation img {
-		    display: none;
+		    display: none;position:relative;left:-100px;top:-50px;
 		}
 		#animation img:first-child {
 		    display: block;
+		}
+
+
+
+		#insidegrad {
+			font-family:Space Mono;
+		    color:rgba(255,255,255,0.8);
+		    font-size:10px;letter-spacing:2px;
+		    text-transform:uppercase;font-weight:bold;border-radius:10px 5px;text-shadow: 2px 2px 8px #4ec7f2;display:none;
 		}
 	</style>
   </head>
@@ -75,7 +87,9 @@
 					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_23.jpg" class="animated" />
 					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_24.jpg" class="animated" />
 				</div>
-    	<div id="forumtitle"><div class="smalltitle"><span style="font-size:11px;font-weight:bold;">Mithladrith Research Unit</span><br>Exploratory Vessel 01</div><div id="bigtitle">Valade</div><div class="smalltitle">Code: MRU-EV01</div></div></div></td>
+    	<div id="forumtitle"><div class="smalltitle"><span style="font-size:11px;font-weight:bold;">Mithladrith Research Unit</span><br>Exploratory Vessel 01</div><div id="bigtitle">Valade</div><div class="smalltitle">Code: MRU-EV01</div></div></div>
+    	<div id="insidegrad">Click to start</div></div>
+    </td>
   </tr>
 </table>
 
@@ -83,6 +97,7 @@
 	onload = function startAnimation() {
 
 	$("#forumtitle").delay(2200).fadeIn(2000)
+	$("#insidegrad").delay(3200).fadeIn(1000)
     var frames = document.getElementById("animation").children;
     var frameCount = frames.length;
     var i = 0;
