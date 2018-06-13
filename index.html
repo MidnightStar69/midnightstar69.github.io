@@ -38,18 +38,69 @@
 
 		.smalltitle {font-size:10px;text-transform:uppercase;}
 		#bigtitle {font-size:50px;text-transform:uppercase;font-weight:bold;line-height:60px;margin-bottom:2px;}
+		#animation img {
+		    display: none;
+		}
+		#animation img:first-child {
+		    display: block;
+		}
 	</style>
   </head>
   <body>
       <table id="opening">
   <tr>
-    <td><div id="holder"><img id="backgroundGIF" src="http://files.jcink.net/uploads/kyunfai/ezgif_com_optimize.gif" alt="" />
+    <td><div id="holder"><div id="animation">
+				    <img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_1.jpg" class="animated" />
+				    <img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_2.jpg" class="animated" />
+				    <img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_3.jpg" class="animated" />
+				    <img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_4.jpg" class="animated" />
+				    <img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_5.jpg" class="animated" />
+				    <img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_6.jpg" class="animated" />
+				    <img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_7.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_8.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_9.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_10.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_11.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_12.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_13.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_14.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_15.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_16.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_17.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_18.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_19.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_20.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_21.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_22.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_23.jpg" class="animated" />
+					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_24.jpg" class="animated" />
+				</div>
     	<div id="forumtitle"><div class="smalltitle"><span style="font-size:11px;font-weight:bold;">Mithladrith Research Unit</span><br>Exploratory Vessel 01</div><div id="bigtitle">Valade</div><div class="smalltitle">Code: MRU-EV01</div></div></div></td>
   </tr>
 </table>
 
-<script>$('#backgroundGIF').load(function(){
+<script>
+	function startAnimation() {
+	    var frames = document.getElementById("animation").children;
+	    var frameCount = frames.length;
+	    var i = 0;
+	    var test = setInterval(frameAni, 100);
+	    
+	    function frameAni() {
+	    		if (i == 23){   	
+	        	clearInterval(test);
+	          frames[i].style.display = "block";
+	        }
+	        else { frames[i].style.display = "none";
+	        frames[i+1].style.display = "block";
+	        i = i+1;}
+	       
+	    }
+	}
+
+	$('img').load(function(){
 		$("#holder").show();
+		startAnimation();
 		$("#forumtitle").delay(4500).fadeIn(2000)
 	});
 </script>
