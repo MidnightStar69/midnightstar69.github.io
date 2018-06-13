@@ -48,13 +48,13 @@
 		    display: block;
 		}
 
-
+		#grad{height:16px;}
 
 		#insidegrad {
 			font-family:Space Mono;
 		    color:rgba(255,255,255,0.8);
 		    font-size:10px;letter-spacing:2px;
-		    text-transform:uppercase;font-weight:bold;border-radius:10px 5px;text-shadow: 2px 2px 8px #4ec7f2;display:none;
+		    text-transform:uppercase;font-weight:bold;border-radius:10px 5px;text-shadow: 2px 2px 8px #4ec7f2;display: none;
 		}
 	</style>
   </head>
@@ -88,16 +88,27 @@
 					<img src="http://files.jcink.net/uploads/kyunfai/tesValade/Opening_24.jpg" class="animated" />
 				</div>
     	<div id="forumtitle"><div class="smalltitle"><span style="font-size:11px;font-weight:bold;">Mithladrith Research Unit</span><br>Exploratory Vessel 01</div><div id="bigtitle">Valade</div><div class="smalltitle">Code: MRU-EV01</div></div></div>
-    	<div id="insidegrad">Click to start</div></div>
+    	<div id="grad"><div id="insidegrad" class="blink">Click to start</div></div></div>
     </td>
   </tr>
 </table>
 
 <script>
+
+	$('.blink').each(function() {
+	    var elem = $(this);
+	    setInterval(function() {
+	        if (elem.css('display') == 'none') {
+	            elem.fadeIn();
+	        } else {
+	            elem.fadeOut();
+	        }    
+	    }, 1000);
+	});
 	onload = function startAnimation() {
 
-	$("#forumtitle").delay(2200).fadeIn(2000)
-	$("#insidegrad").delay(3200).fadeIn(1000)
+	$("#forumtitle").delay(2200).fadeIn(2000);
+	$("#insidegrad").delay(3700).fadeIn(1000);
     var frames = document.getElementById("animation").children;
     var frameCount = frames.length;
     var i = 0;
